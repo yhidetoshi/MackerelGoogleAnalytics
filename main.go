@@ -19,8 +19,6 @@ var (
 )
 
 const (
-	version = "0.0.1"
-
 	// GA
 	startDate = "today"
 	endDate   = "today"
