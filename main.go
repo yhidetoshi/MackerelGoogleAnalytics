@@ -34,6 +34,8 @@ const (
 
 	// Mackerel
 	serviceName = "GoogleAnalytics"
+	
+	// Lambda
 	timezone    = "Asia/Tokyo"
 	offset      = 9 * 60 * 60
 )
