@@ -12,7 +12,6 @@ deps:
 devel-deps: deps
 	GO111MODULE=off
 	go get -u golang.org/x/lint/golint
-	go get -u github.com/motemen/gobump/cmd/gobump
 	go get -u github.com/Songmu/make2help/cmd/make2help
 
 
@@ -27,7 +26,6 @@ build-deps:
 build: build-deps
 	rm -rf ./main
 	gox -os=linux -arch=amd64 -output=./main -ldflags "-s -w"
-	gobump show
 
 
 ## Lint
