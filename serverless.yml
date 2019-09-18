@@ -19,7 +19,7 @@ functions:
       TZ: Asia/Tokyo
       MKRKEY: ${opt:mkrkey}
       VIEW_ID: ${opt:viewid}
-      GOOGLE_APPLICATION_CREDENTIALS_JSON: ${opt:apikey}
+      GOOGLE_APPLICATION_CREDENTIALS_JSON: ${opt:google-apikey}
     events:
       - schedule: rate(15 minutes)
 
