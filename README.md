@@ -4,7 +4,7 @@
 ```
 AWS Lambdaに GoogleAnalytics の名前でfunctionを作成 （ランタイムはGo1.x）
 環境変数に以下をセットする
-- GOOGLE_APPLICATION_CREDENTIALS_JSON: GCPのクレデンシャル
+- GOOGLE_APPLICATION_CREDENTIALS_JSON: GCPのクレデンシャル(json)
 - MKRKEY: mackerelのapikey
 - TZ: Asia/Tokyo
 - VIEW_ID: GA
