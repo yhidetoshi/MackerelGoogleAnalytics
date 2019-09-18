@@ -10,7 +10,7 @@ curl -X POST https://api.mackerelio.com/api/v0/services \
     -d '{"name": "GoogleAnalytics", "memo": "google analytics"}'
 
 make build
-sls deploy --aws-profile my-dev --viewid <VIEW-ID> --mkrkey ${MKRKEY} --credential ${GOOGLE_APPLICATION_CREDENTIALS_JSON}
+sls deploy --aws-profile <PROFILE> --viewid <VIEW-ID> --mkrkey ${MKRKEY} --credential ${GOOGLE_APPLICATION_CREDENTIALS_JSON}
 ```
 
 
