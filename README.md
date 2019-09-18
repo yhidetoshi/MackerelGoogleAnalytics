@@ -3,6 +3,7 @@
 ■ デプロイ
 ```
 export MKRKEY=XXX
+export GOOGLE_APPLICATION_CREDENTIALS_JSON="{...}"
 
 curl -X POST https://api.mackerelio.com/api/v0/services \
     -H "X-Api-Key: ${MKRKEY}" \
