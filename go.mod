@@ -12,10 +12,10 @@ require (
 	github.com/motemen/gobump v0.0.0-20190215161939-66ee926e4810 // indirect
 	golang.org/x/crypto v0.0.0-20190911031432-227b76d455e7 // indirect
 	golang.org/x/lint v0.0.0-20190909230951-414d861bb4ac // indirect
-	golang.org/x/net v0.0.0-20190916140828-c8589233b77d // indirect
+	golang.org/x/net v0.0.0-20190918130420-a8b05e9114ab // indirect
 	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e // indirect
 	golang.org/x/sys v0.0.0-20190916202348-b4ddaad3f8a3 // indirect
-	golang.org/x/tools v0.0.0-20190916230425-fff8d941733a // indirect
+	golang.org/x/tools v0.0.0-20190918234917-7baacfbe02f2 // indirect
 	google.golang.org/api v0.10.0
 )

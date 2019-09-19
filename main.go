@@ -16,6 +16,9 @@ import (
 var (
 	mkrKey = os.Getenv("MKRKEY")
 	client = mackerel.NewClient(mkrKey)
+
+	json   = os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
+	viewID = os.Getenv("VIEW_ID")
 )
 
 const (
@@ -32,10 +35,10 @@ const (
 
 	// Mackerel
 	serviceName = "GoogleAnalytics"
-	
+
 	// Lambda
-	timezone    = "Asia/Tokyo"
-	offset      = 9 * 60 * 60
+	timezone = "Asia/Tokyo"
+	offset   = 9 * 60 * 60
 )
 
 func main() {
@@ -48,9 +51,6 @@ func main() {
 func Handler() {
 	jst := time.FixedZone(timezone, offset)
 	nowTime := time.Now().In(jst)
-
-	json := os.Getenv("GOOGLE_APPLICATION_CREDENTIALS_JSON")
-	viewID := os.Getenv("VIEW_ID")
 
 	ctx := context.Background()
 	jwtConfig, err := google.JWTConfigFromJSON([]byte(json), analytics.AnalyticsReadonlyScope)
