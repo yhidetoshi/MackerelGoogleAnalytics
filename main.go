@@ -4,9 +4,11 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/aws/aws-lambda-go/lambda"
+
 	"github.com/mackerelio/mackerel-client-go"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/analytics/v3"
@@ -79,20 +81,23 @@ func Handler() {
 	fmt.Println(resUsers.TotalsForAllResults["ga:"+metricsUsers])
 	fmt.Println(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
 
-	mkrErr := PostValuesToMackerel(resUsers.TotalResults, resPVs.TotalResults, nowTime)
+	intResultUsers, _ := strconv.Atoi(resUsers.TotalsForAllResults["ga:"+metricsUsers])
+	intResultPVs, _ := strconv.Atoi(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
+
+	mkrErr := PostValuesToMackerel(intResultPVs, intResultUsers, nowTime)
 	if err != nil {
 		fmt.Println(mkrErr)
 	}
 }
 
 // PostValuesToMackerel Post Metrics to Mackerel
-func PostValuesToMackerel(resultsUsers int64, resultPVs int64, nowTime time.Time) error {
+func PostValuesToMackerel(intResultUsers int, intResultPVs int, nowTime time.Time) error {
 	// Post users
 	errUser := client.PostServiceMetricValues(serviceName, []*mackerel.MetricValue{
 		&mackerel.MetricValue{
 			Name:  "Users.users",
 			Time:  nowTime.Unix(),
-			Value: resultsUsers,
+			Value: intResultUsers,
 		},
 	})
 	if errUser != nil {
@@ -104,7 +109,7 @@ func PostValuesToMackerel(resultsUsers int64, resultPVs int64, nowTime time.Time
 		&mackerel.MetricValue{
 			Name:  "PV.PVs",
 			Time:  nowTime.Unix(),
-			Value: resultPVs,
+			Value: intResultPVs,
 		},
 	})
 	if errPV != nil {
