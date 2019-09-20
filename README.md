@@ -1,5 +1,7 @@
 # MackerelGoogleAnalytics
 
+https://yhidetoshi.hatenablog.com/entry/2019/09/19/152750
+
 ■ デプロイ
 ```
 export MKRKEY=XXX
