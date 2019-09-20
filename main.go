@@ -76,9 +76,9 @@ func Handler() {
 		fmt.Println(err)
 	}
 
-	fmt.Println(nowTime)
-	fmt.Println(resUsers.TotalsForAllResults["ga:"+metricsUsers])
-	fmt.Println(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
+	//fmt.Println(nowTime)
+	//fmt.Println(resUsers.TotalsForAllResults["ga:"+metricsUsers])
+	//fmt.Println(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
 
 	intResultUsers, _ := strconv.Atoi(resUsers.TotalsForAllResults["ga:"+metricsUsers])
 	intResultPVs, _ := strconv.Atoi(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
