@@ -23,8 +23,8 @@ var (
 
 const (
 	// GA
-	startDate = "yesterday"
-	endDate   = "yesterday"
+	startDate = "today"
+	endDate   = "today"
 
 	metricsUsers     = "users"
 	metricsPVs       = "pagePath!=/preview"
