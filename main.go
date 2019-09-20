@@ -23,11 +23,11 @@ var (
 
 const (
 	// GA
-	startDate = "today"
-	endDate   = "today"
+	startDate = "yesterday"
+	endDate   = "yesterday"
 
 	metricsUsers     = "users"
-	metricsPVs       = "pagePath=~/"
+	metricsPVs       = "pagePath!=/preview"
 	metricsPageViews = "pageviews"
 
 	dimensionsTitle = "pageTitle"
@@ -74,8 +74,10 @@ func Handler() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	// fmt.Println(nowTime)
-	// fmt.Println(resPVs.TotalResults)
+
+	fmt.Println(nowTime)
+	fmt.Println(resUsers.TotalsForAllResults["ga:"+metricsUsers])
+	fmt.Println(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
 
 	mkrErr := PostValuesToMackerel(resUsers.TotalResults, resPVs.TotalResults, nowTime)
 	if err != nil {
