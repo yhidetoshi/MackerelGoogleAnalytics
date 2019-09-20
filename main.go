@@ -70,15 +70,14 @@ func Handler() {
 
 	// Get PVs
 	resPVs, err := client.Data.Ga.Get(
-		"ga:"+viewID, startDate, endDate, "ga:"+metricsPageViews).Dimensions(
-		"ga:" + dimensionsTitle + "," + "ga:" + dimensionsPath).Filters("ga:" + metricsPVs).Do()
+		"ga:"+viewID, startDate, endDate, "ga:"+metricsPageViews).Filters("ga:" + metricsPVs).Do()
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	//fmt.Println(nowTime)
-	//fmt.Println(resUsers.TotalsForAllResults["ga:"+metricsUsers])
-	//fmt.Println(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
+	// fmt.Println(nowTime)
+	// fmt.Println(resUsers.TotalsForAllResults["ga:"+metricsUsers])
+	// fmt.Println(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
 
 	intResultUsers, _ := strconv.Atoi(resUsers.TotalsForAllResults["ga:"+metricsUsers])
 	intResultPVs, _ := strconv.Atoi(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
