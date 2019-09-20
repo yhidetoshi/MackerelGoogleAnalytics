@@ -31,9 +31,6 @@ const (
 	metricsPVs       = "pagePath!=/preview"
 	metricsPageViews = "pageviews"
 
-	dimensionsTitle = "pageTitle"
-	dimensionsPath  = "pagePath"
-
 	// Mackerel
 	serviceName = "GoogleAnalytics"
 
@@ -45,8 +42,6 @@ const (
 func main() {
 	lambda.Start(Handler)
 }
-
-// func main (){
 
 // Handler Lambda
 func Handler() {
@@ -74,10 +69,6 @@ func Handler() {
 	if err != nil {
 		fmt.Println(err)
 	}
-
-	// fmt.Println(nowTime)
-	// fmt.Println(resUsers.TotalsForAllResults["ga:"+metricsUsers])
-	// fmt.Println(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
 
 	intResultUsers, _ := strconv.Atoi(resUsers.TotalsForAllResults["ga:"+metricsUsers])
 	intResultPVs, _ := strconv.Atoi(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
