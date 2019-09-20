@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/aws/aws-lambda-go/lambda"
-
 	"github.com/mackerelio/mackerel-client-go"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/analytics/v3"
