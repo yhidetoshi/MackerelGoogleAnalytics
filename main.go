@@ -73,7 +73,7 @@ func Handler() {
 	intResultUsers, _ := strconv.Atoi(resUsers.TotalsForAllResults["ga:"+metricsUsers])
 	intResultPVs, _ := strconv.Atoi(resPVs.TotalsForAllResults["ga:"+metricsPageViews])
 
-	mkrErr := PostValuesToMackerel(intResultPVs, intResultUsers, nowTime)
+	mkrErr := PostValuesToMackerel(intResultUsers, intResultPVs, nowTime)
 	if err != nil {
 		fmt.Println(mkrErr)
 	}
